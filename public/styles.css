@@ -1,3 +1,222 @@
+:root {
+  --font-base-size: 16px;
+  --font-base-family: Helvetica, Arial, sans-serif;
+  --max-width: 56rem;
+  --spacing: 1rem;
+  --color-border: black;
+}
+
 html {
   /* ... */
+  box-sizing: border-box;
 }
+
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-base-family);
+  font-size: var(--font-base-size);
+  margin: 0 auto;
+  max-width: var(--max-width);
+  padding: var(--spacing);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-bottom: var(--spacing);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+ul {
+  padding-left: var(--spacing);
+}
+
+ul li {
+  margin-bottom: calc(var(--spacing) / 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: aliceblue;
+
+}
+
+.table {
+  margin-bottom: var(--spacing);
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+
+  overflow-y: auto;
+  width: 100%;
+}
+
+table td,
+table th {
+  border: 2px solid var(--color-border);
+  padding: calc(var(--spacing) / 2);
+  text-align: center;
+}
+
+th {
+  /* Takki fari ekki í nýja línu */
+  white-space: nowrap;
+}
+
+th button {
+  background-color: var(--color-border);
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: calc(var(--spacing) / 2);
+  padding: calc(var(--spacing) / 2);
+}
+
+body {
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+}
+
+section {
+  font-size: larger;
+  text-align: center;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dingdong {
+  background-color: #4488AA;
+  border: 10px solid #4488AA;
+  border-radius: 50px;
+  padding: 40px;
+}
+.games {
+  text-align: center;
+}
+.games-container {
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+h1 {
+  margin: 15px;
+  font-size: 50px;
+}
+
+h2 {
+  margin: 15px;
+  font-size: 30px;
+}
+h3 {
+  margin: 5px;
+  font-size: 20px;
+}
+
+a {
+  color: rgb(8, 40, 178);
+  font-size: 25px;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* align-content: center; */
+}
+
+.date-toggle {
+  background-color: #73b6d8; /* Green background */
+  color: black; /* White text */
+  padding: 10px 20px; /* Top and bottom padding, left and right padding */
+  margin: 4px 0; /* Margin on top and bottom */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Cursor changes to a hand icon when hovered */
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+
+  font-weight: 200;
+  width: 180px; /* Set a fixed width */
+  height: 40px; /* Set a fixed height */
+  text-align: center; /* Align text horizontally */
+}
+
+.date-toggle:hover {
+  background-color: #11709f; /* Darker shade of green when hovered */
+}
+
+.date-toggle:focus {
+  outline: none;
+}
+.date-toggle:active {
+  background-color: #428cb1
+}
+
+
+.game-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.team-info {
+  flex: 1;
+  padding: 10px;
+  background-color: #4488AA;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+
+.team-name {
+  font-weight: bold;
+  display: block; /* Makes the name appear on its own line */
+}
+.home-team .team-name {
+
+}
+
+.away-team .team-name {
+
+}
+
+.vs {
+  margin: 0 15px; /* Adjust margins as needed to keep 'vs' centered */
+  font-size: 1.2em; /* Optional: Adjust the size of 'vs' */
+}
+
+
+
