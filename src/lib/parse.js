@@ -14,7 +14,6 @@ export function parseTeamsJson(data) {
   return teamsJSON;
 }
 
-
 /**
  * Tekur 'gameday' gögn, staðfestir og hendir ólöglegum færslum, skilar
  * á normalizeruðu formi.
@@ -23,17 +22,13 @@ export function parseTeamsJson(data) {
  */
 export function parseGamedayJson(data) {
   let gamedayJSON;
-  // console.log(data);
-  // console.log('parseGamedayJson');
+
   try {
     gamedayJSON = JSON.parse(data);
-    // console.log(gamedayJSON);
-    // console.log(typeof gamedayJSON);
   } catch (e) {
-    console.log('invalid data', e);
+    console.error('invalid data', e);
     return null;
   }
-
 
   if (gamedayJSON == null) {
     return null;
@@ -43,21 +38,20 @@ export function parseGamedayJson(data) {
     return null;
   }
 
-
   if (!gamedayJSON) {
-    console.warn('parsed data is not an object')
+    console.warn('parsed data is not an object');
     return null;
   }
 
   if (!gamedayJSON.games) {
     console.warn('missing games array');
+    return null;
   }
 
   if (!gamedayJSON.date) {
     console.warn('missing date string');
     return null;
   }
-
 
   return gamedayJSON;
 }

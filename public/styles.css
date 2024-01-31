@@ -1,14 +1,9 @@
 :root {
   --font-base-size: 16px;
-  --font-base-family: Helvetica, Arial, sans-serif;
+  --font-base-family: helvetica, arial, sans-serif;
   --max-width: 56rem;
   --spacing: 1rem;
   --color-border: black;
-}
-
-html {
-  /* ... */
-  box-sizing: border-box;
 }
 
 
@@ -24,13 +19,7 @@ html {
   padding: 0;
 }
 
-body {
-  font-family: var(--font-base-family);
-  font-size: var(--font-base-size);
-  margin: 0 auto;
-  max-width: var(--max-width);
-  padding: var(--spacing);
-}
+
 
 h1,
 h2,
@@ -63,9 +52,13 @@ ul li {
 
 table {
   border-collapse: collapse;
-
   overflow-y: auto;
   width: 100%;
+}
+
+th {
+  /* Takki fari ekki í nýja línu */
+  white-space: nowrap;
 }
 
 table td,
@@ -75,10 +68,7 @@ table th {
   text-align: center;
 }
 
-th {
-  /* Takki fari ekki í nýja línu */
-  white-space: nowrap;
-}
+
 
 th button {
   background-color: var(--color-border);
@@ -91,11 +81,17 @@ th button {
 }
 
 body {
+  font-family: var(--font-base-family);
+  font-size: var(--font-base-size);
+  margin: 0 auto;
+  max-width: var(--max-width);
+  padding: var(--spacing);
   background-color: lightblue;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .parent {
   display: flex;
   flex-direction: column;
@@ -114,20 +110,21 @@ section {
 }
 
 .dingdong {
-  background-color: #4488AA;
-  border: 10px solid #4488AA;
+  background-color: #48A;
+  border: 10px solid #48A;
   border-radius: 50px;
   padding: 40px;
 }
+
 .games {
   text-align: center;
 }
+
 .games-container {
   display: flex;
   flex-direction: center;
   align-items: center;
   text-align: center;
-
 }
 
 h1 {
@@ -139,21 +136,21 @@ h2 {
   margin: 15px;
   font-size: 30px;
 }
+
 h3 {
   margin: 5px;
   font-size: 20px;
 }
 
 a {
-  color: rgb(8, 40, 178);
+  color: #1518a2;
   font-size: 25px;
 }
 
-.titleContainer {
+.title-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* align-content: center; */
 }
 
 .date-toggle {
@@ -166,7 +163,6 @@ a {
   cursor: pointer; /* Cursor changes to a hand icon when hovered */
   font-size: 16px; /* Font size */
   transition: background-color 0.3s; /* Smooth transition for hover effect */
-
   font-weight: 200;
   width: 180px; /* Set a fixed width */
   height: 40px; /* Set a fixed height */
@@ -180,10 +176,10 @@ a {
 .date-toggle:focus {
   outline: none;
 }
+
 .date-toggle:active {
   background-color: #428cb1
 }
-
 
 .game-info {
   display: flex;
@@ -195,7 +191,7 @@ a {
 .team-info {
   flex: 1;
   padding: 10px;
-  background-color: #4488AA;
+  background-color: #48A;
   border-radius: 5px;
   margin: 0 5px;
 }
@@ -205,13 +201,7 @@ a {
   font-weight: bold;
   display: block; /* Makes the name appear on its own line */
 }
-.home-team .team-name {
 
-}
-
-.away-team .team-name {
-
-}
 
 .vs {
   margin: 0 15px; /* Adjust margins as needed to keep 'vs' centered */

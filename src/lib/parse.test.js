@@ -3,11 +3,12 @@ import { parseGamedayJson, parseTeamsJson } from './parse';
 
 describe('parse', () => {
   describe('parseTeamsJson', () => {
-    it('should have a test', () => {
-      expect(parseTeamsJson('{}')).toEqual({});
+    it('should return null if data is invalid json', () => {
+      const result = parseTeamsJson('asdf');
+
+      expect(result).toBe(null);
     });
   });
-
 
   describe('parseGamedayJson', () => {
     it('should return null if data is invalid json', () => {
@@ -21,12 +22,11 @@ describe('parse', () => {
 
       expect(result).toBe(null);
     });
+
+    it('should return null if data is missing `games`', () => {
+      const result = parseGamedayJson('{"date": "2021-01-01"}');
+
+      expect(result).toBe(null);
+    });
   });
-
-  // describe('parseGameday', ()), síðustu mín (klára), komið
-
 });
-// function parseGameday(arg0) {
-//   throw new Error('Function not implemented.');
-// }
-

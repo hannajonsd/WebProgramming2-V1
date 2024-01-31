@@ -24,7 +24,7 @@ export function indexTemplate() {
   const title = 'Boltadeildin-forsíða';
   const body = /* html */ `
   <section>
-    <div class="titleContainer">
+    <div class="title-container">
       <h1>Velkomin í boltadeildina!</h1>
     </div>
     <p>Þetta er síða um boltadeildina! Hér má finna upplýsingar um stöðu hvers liðs innan deildarinnar og
@@ -67,7 +67,7 @@ export function stadaTemplate(standings) {
 //   return typeof team === ;
 // }
 
-export function gameObjectToHtmlString(gameday) {
+export function gameObjectToHtmlString(gameday, validTeams) {
   const date = new Date(gameday.date).toDateString();
 
   let gamesHtml = '';
@@ -78,23 +78,20 @@ export function gameObjectToHtmlString(gameday) {
       const homeScore = game.home.score;
       const awayScore = game.away.score;
 
-      gamesHtml += `
+      if (validTeams.includes(hometeams) && validTeams.includes(awayteams)) {
+        gamesHtml += `
       <div class="game-info">
         <div class="team-info home-team">
-          <span class="label">Hometeam:</span>
           <span class="team-name">${hometeams}</span>
           <span class="team-score">${homeScore}</span>
         </div>
         <div class="vs">vs</div>
         <div class="team-info away-team">
-          <span class="label">Awayteam:</span>
           <span class="team-name">${awayteams}</span>
           <span class="team-score">${awayScore}</span>
         </div>
       </div>`;
-
-      // `<p> Hometeam: <br> ${hometeams} ${homeScore} <br>
-      //  Awayteam: <br> ${awayteams} ${awayScore} <br></p>`;
+      }
     }
   });
 
@@ -107,15 +104,19 @@ export function gameObjectToHtmlString(gameday) {
 `;
 }
 
-export function leikirTemplate(games) {
+export function sortGamesByDate(games) {
+  return games.sort(
+    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+  );
+}
+
+export function leikirTemplate(games, validTeams) {
   const title = 'Boltadeildin-leikir!';
 
-  games.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-
   let allGames = '';
+
   games.forEach((gameday) => {
-    allGames += gameObjectToHtmlString(gameday);
-    // console.log(gameObjectToHtmlString(game));
+    allGames += gameObjectToHtmlString(gameday, validTeams);
   });
 
   const body = /* html */ `

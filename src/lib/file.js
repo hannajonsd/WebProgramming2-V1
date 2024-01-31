@@ -36,7 +36,7 @@ export async function readFilesFromDir(dir) {
   try {
     files = await readdir(dir);
   } catch (e) {
-    console.log('error', e);
+    console.error('error', e);
     return [];
   }
 
