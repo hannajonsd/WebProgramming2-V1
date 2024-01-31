@@ -1,3 +1,4 @@
+// @ts-nocheck
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.date-toggle').forEach((button) => {
     button.addEventListener('click', () => {

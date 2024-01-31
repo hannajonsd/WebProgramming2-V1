@@ -1,3 +1,4 @@
+import { isScoreValid } from './score.js';
 // exported for testing purposes
 export function template(title, body) {
   const html =
@@ -58,9 +59,9 @@ export function stadaTemplate(standings) {
   return template(title, body);
 }
 
-export function isScoreValid(score) {
-  return typeof score === 'number' && score >= 0;
-}
+// export function isScoreValid(score) {
+//   return typeof score === 'number' && score >= 0;
+// }
 
 // export function isTeamValid(team) {
 //   return typeof team === ;

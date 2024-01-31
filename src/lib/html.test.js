@@ -48,7 +48,7 @@ describe('html', () => {
           <th>Nafn liðs</th>
           <th>Staða</th>
         </tr>
-
+          ${standingsHtml}
       </table>
         </section>`);
     });
@@ -60,7 +60,7 @@ describe('html', () => {
       expect(leikirTemplate()).toContain(`
       <section>
         <h2>Seinustu leikir</h2>
-
+        ${gamesHtml}
       </section>
       `);
     });
