@@ -59,14 +59,6 @@ export function stadaTemplate(standings) {
   return template(title, body);
 }
 
-// export function isScoreValid(score) {
-//   return typeof score === 'number' && score >= 0;
-// }
-
-// export function isTeamValid(team) {
-//   return typeof team === ;
-// }
-
 export function gameObjectToHtmlString(gameday, validTeams) {
   const date = new Date(gameday.date).toDateString();
 
@@ -114,6 +106,7 @@ export function leikirTemplate(games, validTeams) {
   const title = 'Boltadeildin-leikir!';
 
   let allGames = '';
+  sortGamesByDate(games);
 
   games.forEach((gameday) => {
     allGames += gameObjectToHtmlString(gameday, validTeams);

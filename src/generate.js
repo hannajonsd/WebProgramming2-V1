@@ -43,14 +43,7 @@ async function main() {
     }
   }
 
-  // console.log('teams',teams);
-  // console.log('gameday',data);
   const calculatedStandings = calculateStandings(data, teams);
-  // console.log('standings',calculatedStandings);
-
-  // data er fylki af parsed gögnum sem við viljum skrifa
-  // niður i html skrá sem heitir index.html
-  // (og siðan í frh stada.html og leikir.html)
 
   const indexHtml = indexTemplate();
   const indexFilename = join(OUTPUT_DIR, 'index.html');
@@ -64,10 +57,7 @@ async function main() {
   const leikirFilename = join(OUTPUT_DIR, 'leikir.html');
   await writeFile(leikirFilename, leikirHtml);
 
-  // dictionary af hlutum
   // parse: taka við gögnum og varpa i gagnaformat
-
-  // 3x fyrir index, leikir, stada
 }
 
 main().catch((error) => {

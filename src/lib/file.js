@@ -45,20 +45,15 @@ export async function readFilesFromDir(dir) {
     const info = await stat(path);
 
     if (info.isDirectory()) {
-      // console.log(file, ' is dir');
       return null;
     }
-
-    // if (info.isFile()) {
-    //   console.log(file, ' is file');
-    // }
 
     return path;
   });
 
   const resolved = await Promise.all(mapped);
 
-  // // Remove any directories that will be represented by `null`
+  // Remove any directories that will be represented by `null`
   const filtered = [];
   for (const file of resolved) {
     if (file) {

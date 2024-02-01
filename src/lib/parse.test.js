@@ -8,11 +8,23 @@ describe('parse', () => {
 
       expect(result).toBe(null);
     });
+
+    it('should return null if data is null', () => {
+      const result = parseTeamsJson('null');
+
+      expect(result).toBe(null);
+    });
   });
 
   describe('parseGamedayJson', () => {
     it('should return null if data is invalid json', () => {
       const result = parseGamedayJson('asdf');
+
+      expect(result).toBe(null);
+    });
+
+    it('should return null if data is null', () => {
+      const result = parseGamedayJson('null');
 
       expect(result).toBe(null);
     });

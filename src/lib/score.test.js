@@ -2,7 +2,7 @@ import { describe, expect, it } from '@jest/globals';
 import { calculateStandings, isScoreValid } from './score';
 
 describe('score', () => {
-  describe.only('calculateStandings', () => {
+  describe('calculateStandings', () => {
     it('returns empty array with no valid teams', () => {
       const data = [
         {
@@ -65,7 +65,7 @@ describe('score', () => {
   });
 
   describe('isScoreValid', () => {
-    it.skip('should return true of score is valid, else return false', () => {
+    it('should return true of score is valid, else return false', () => {
       expect(isScoreValid(1)).toBe(true);
       expect(isScoreValid(-1)).toBe(false);
       expect(isScoreValid(99)).toBe(true);

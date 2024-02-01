@@ -1,3 +1,4 @@
+// parse: taka við gögnum og varpa i gagnaformat
 export function parseTeamsJson(data) {
   let teamsJSON;
   try {
@@ -55,6 +56,3 @@ export function parseGamedayJson(data) {
 
   return gamedayJSON;
 }
-
-// lesa daginn, lesa leikina yfir daginn
-// parse-a gameday files

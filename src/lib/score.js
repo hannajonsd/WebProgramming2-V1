@@ -7,8 +7,6 @@ export function sortTeamsByPoints(teamPoints) {
 }
 
 export function calculateStandings(data, validTeams) {
-  // console.log('checka', validTeams);
-
   const teamPoints = {};
 
   data.forEach((gameday) => {
@@ -22,7 +20,6 @@ export function calculateStandings(data, validTeams) {
         if (!teamPoints[hometeams]) teamPoints[hometeams] = 0;
         if (!teamPoints[awayteams]) teamPoints[awayteams] = 0;
 
-        // console.log('valid team', hometeams, awayteams);
         if (isScoreValid(homeScore) && isScoreValid(awayScore)) {
           if (homeScore > awayScore) {
             teamPoints[hometeams] += 3;
@@ -41,13 +38,3 @@ export function calculateStandings(data, validTeams) {
 
   return teams;
 }
-
-/*
-  skoða hvort liðið sé gilt, þá ekki birta
-  svo leita af liðinu i games.home.name og games.away.name
-  ef það er þar þá birta, telja score í leiðinni
-*/
-
-// file les
-// parse json
-// utreikningar i score.js
