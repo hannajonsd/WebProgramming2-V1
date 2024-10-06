@@ -56,8 +56,6 @@ async function main() {
   const leikirHtml = leikirTemplate(data, teams);
   const leikirFilename = join(OUTPUT_DIR, 'leikir.html');
   await writeFile(leikirFilename, leikirHtml);
-
-  // parse: taka við gögnum og varpa i gagnaformat
 }
 
 main().catch((error) => {
